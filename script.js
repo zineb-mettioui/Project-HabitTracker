@@ -1,23 +1,63 @@
-// Highlight today's date
-document.addEventListener("DOMContentLoaded", () => {
-	const days = document.querySelectorAll(".day");
+const emojiButton = document.getElementById("selectEmojiBtn");
+const popup = document.getElementById("emojiPopup");
+const days = document.querySelectorAll(".day");
+let selectedDay = null; 
+
+
+function selectDay(day) {
+	days.forEach((d) => d.classList.remove("clicked"));
+	day.classList.add("clicked");
+	selectedDay = day;
+	const dateNumber = parseInt(day.querySelector(".date").innerText);
+	const savedEmoji = localStorage.getItem(`day-emoji-${dateNumber}`);
+
+	emojiButton.innerText = savedEmoji ? savedEmoji : "⨁";
+}
+
+
+window.addEventListener("load", () => {
 	const today = new Date();
 	const todayDate = today.getDate();
-
-	console.log("Today's date:", todayDate);
+	let foundToday = false;
 
 	days.forEach((day) => {
-		const dateSpan = day.querySelector(".date");
-		const dateNumber = parseInt(dateSpan.innerText);
-		console.log("Calendar date:", dateNumber);
-
+		const dateNumber = parseInt(day.querySelector(".date").innerText);
+		const savedEmoji = localStorage.getItem(`day-emoji-${dateNumber}`);
 		if (dateNumber === todayDate) {
-			day.classList.add("clicked");
+			selectDay(day);
+			foundToday = true;
 		}
+	});
 
-		day.addEventListener("click", () => {
-			days.forEach((d) => d.classList.remove("clicked"));
-			day.classList.add("clicked");
-		});
+});
+
+
+days.forEach((day) => {
+	day.addEventListener("click", () => {
+		selectDay(day);
+	});
+});
+
+
+document.getElementById("selectEmojiBtn").addEventListener("click", () => {
+	if (selectedDay) {
+		popup.style.display = "flex";
+	}
+});
+
+
+const emojis = document.querySelectorAll(".popup-emoji");
+emojis.forEach((emoji) => {
+	emoji.addEventListener("click", () => {
+		if (selectedDay) {
+			const emojiChar = emoji.innerText;
+		
+			emojiButton.innerText = emojiChar;
+
+			const dateNumber = parseInt(selectedDay.querySelector(".date").innerText);
+			localStorage.setItem(`day-emoji-${dateNumber}`, emojiChar);
+	
+			popup.style.display = "none";
+		}
 	});
 });
