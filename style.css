@@ -1,68 +1,66 @@
 body {
 	font-family: Arial, sans-serif;
-	margin-top: 100px;
-	padding-left: 100px;
-	text-align: left;
-	background-color: #cfcfcf;
-}
-
-.header h1 {
-	font-size: 20px;
-	padding-bottom: 0px;
-}
-.header h2 {
-	font-size: 25px;
-	padding-top: 0px;
-}
-
-.calendar {
-	display: flex;
-	justify-content: space-around;
-	/*background-color: #e0e0e0;*/
-}
-
-.day {
-	text-align: center;
-	padding: 12px;
-	border-radius: 20px;
-	background-color: #fff;
-	width: 40px;
-	height: 80px;
+	margin-top: 50px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	color: #000;
 }
 
-.selected {
-	border: 2px solid #6a0dad;
-	color: #6a0dad;
+/* Background style */
+.container {
+	width: 350px;
+	height: 700px;
+	background-image: linear-gradient(#8e44ad, #fff, #8e44ad, #fff, #8e44ad);
+	border: 2px solid purple;
+	border-radius: 25px;
+}
+
+/* Header style */
+.header h2 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 20px;
+	text-align: left;
+	margin-top: 80px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+/* Button Mood Emoji */
+#selectEmojiBtn {
+	background: none;
+	border: none;
+	padding: 10px 30px;
+	font-size: 25px;
+}
+
+.calendar {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 8px;
+	width: 310px;
+	margin-left: 20px;
+	border-radius: 1;
+}
+
+.day {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 1px solid lightgray;
+	background-color: #fff;
+	border-radius: 10px;
+	padding: 10px 0;
 }
 
 .date {
-	font-size: 20px;
-	font-weight: medium;
+	font-size: 16px;
+	font-weight: 600;
 }
 
 .day-name {
-    padding-top: 10px;
-	font-size: 10px;
-	color: #afaeae;
-}
-
-.feeling-section {
-	margin: 20px;
-}
-
-.emojis {
-	font-size: 24px;
-    padding-top: 8px;
-    color: #afaeae;
-}
-
-@media (min-width: 600px) {
-	.body {
-		margin-top: 10px;
-		padding-left: 10px;
-	}
+	font-size: 8px;
+	margin-top: 8px;
+	color: #555;
 }
