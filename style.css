@@ -110,3 +110,124 @@ body {
 	border: 2px solid purple;
 	color: purple;
 }
+
+/* Fixed Add Habit Button */
+#addHabitFixedBtn {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 330px;
+	margin-left: 155px;
+	background-color: #8e44ad;
+	color: white;
+	border: none;
+	border-radius: 50px;
+	font-size: 40px;
+}
+
+#habitDisplaySection {
+	margin-top: 20px;
+	padding: 0 20px;
+}
+
+#habitDisplaySection h3 {
+	font-size: 18px;
+	color: #333;
+	margin-bottom: 10px;
+}
+
+#habitListContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.habit-item {
+	background-color: #ffffff;
+	padding: 12px 15px;
+	border-radius: 8px;
+	border: 1px solid #e0e0e0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.habit-item.completed {
+	background-color: #e6ffe6;
+}
+
+.habit-info p {
+	color: grey;
+	margin: 4px 0 0 0;
+	font-size: 12px;
+}
+
+.habit-popup {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.55);
+	justify-content: center;
+	align-items: center;
+}
+
+.habit-popup-content {
+	background: #fff;
+	padding: 25px;
+	border-radius: 10px;
+	width: 90%;
+	max-width: 200px;
+}
+
+.habit-popup-content h3 {
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 20px;
+	color: #333;
+}
+
+#habitTypeSelection {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 15px;
+}
+
+.habit-choice-btn {
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	text-align: left;
+}
+
+.habit-choice-btn:hover {
+	background-color: #efefef;
+	border-color: #ccc;
+}
+
+.habit-choice-btn.selected {
+	background-color: #e0c6ec;
+	border-color: #8e44ad;
+	font-weight: bold;
+}
+
+.habit-modal-actions button {
+	background-color: #8e44ad;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 5px;
+	font-size: 14px;
+	margin-left: 10px;
+}
+
+#cancelNewHabitBtn:hover {
+	background-color: #5a6268;
+}
+#saveNewHabitBtn:hover {
+	background-color: #4caf50;
+}

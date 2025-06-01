@@ -33,6 +33,51 @@
 				<div class="day"><span class="date">6</span><span class="day-name">SAT</span></div>
 				<div class="day"><span class="date">7</span><span class="day-name">SUN</span></div>
 			</div>
+
+			<div id="habitDisplaySection">
+				<h3>Today's Habits:</h3>
+				<div id="habitListContainer"></div>
+			</div>
+
+			<button id="addHabitFixedBtn" title="Add New Habit">⨁</button>
+
+			<div id="addHabitModal" class="habit-popup">
+				<div class="habit-popup-content">
+					<h3>Add New Habit</h3>
+					<div id="habitTypeSelection">
+						<p>Choose a habit:</p>
+						<button class="habit-choice-btn" data-habit="Water">Water 💧</button>
+						<button class="habit-choice-btn" data-habit="Sport">Sport 🏋️</button>
+						<button class="habit-choice-btn" data-habit="Study">Study 📚</button>
+						<button class="habit-choice-btn" data-habit="Walk">Walk 🚶</button>
+					</div>
+
+					<div id="waterConfig" style="display: none; margin-top: 15px">
+						<label for="waterQuantity">Glasses of water:</label>
+						<input type="number" id="waterQuantity" value="1" />
+					</div>
+
+					<div id="sportConfig" style="display: none; margin-top: 15px">
+						<label for="sportHours">Hours for Sport:</label>
+						<input type="number" id="sportHours" value="1" />
+					</div>
+
+					<div id="studyConfig" style="display: none; margin-top: 15px">
+						<label for="studyHours">Hours for Study:</label>
+						<input type="number" id="studyHours" value="1" />
+					</div>
+
+					<div id="walkConfig" style="display: none; margin-top: 15px">
+						<label for="walkHours">Hours for Walk:</label>
+						<input type="number" id="walkHours" value="1" />
+					</div>
+
+					<div class="habit-modal-actions" style="margin-top: 20px; text-align: right">
+						<button id="saveNewHabitBtn">Save Habit</button>
+						<button id="cancelNewHabitBtn">Cancel</button>
+					</div>
+				</div>
+			</div>
 		</div>
 		<script src="script.js"></script>
 	</body>
